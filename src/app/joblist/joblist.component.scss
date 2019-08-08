@@ -1,0 +1,82 @@
+.row{
+  padding: 0;
+  margin: 0;
+}
+.toolbar {
+  .btn{
+    color: #fff;
+  }
+  height: 50px;
+  color: #fff;
+  width: 100%;
+ background: #003057;
+}
+.topBar {
+  height: 50px;
+  background: #003057;
+  color: #fff;
+}
+.right{
+  text-align: right;
+}
+.map {
+
+  width: 100%;
+}
+.toolbar.btn{
+  color: #fff;
+}
+mat-sidenav-container{
+  height: 800px;
+}
+.joblistTitle{
+  border-bottom: 1px solid grey;
+}
+.yellow{
+  color: #faa41a;
+}
+.green{
+  color: green;
+}
+.grey{
+  color: grey;
+}
+.clockInMessage{
+  padding: 20px;
+  border-bottom: 1px solid grey;
+}
+.jobCard{
+  padding-top: 15px;
+  border-bottom: 1px solid grey;
+  overflow: hidden;
+  span{
+
+    display: block;
+    padding: 0 0 0 30px;
+
+  }
+  .jobDesc, .name, .address{
+    margin-left: 20px;
+
+  }
+  .setETA{
+    float: left;
+
+
+  }
+  .navigate{
+    float: left;
+  }
+  .btn{
+    color: #0099d8;
+  }
+}
+.dropdown-menu{
+  background:#003057;
+}
+.dropdown-item{
+  color: #fff;
+}
+.dropdown-item:hover{
+  background: none;
+}
