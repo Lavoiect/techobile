@@ -1,0 +1,23 @@
+.toolBar {
+  background: #0b354d;
+  color: #fff;
+   i {
+     color: #fff;
+     }
+}
+
+input{
+
+  border-radius: 0;
+  padding: 20px;
+  border-bottom: none;
+
+}
+input:first-child {
+  margin-top: 5px;
+}
+
+textarea{
+  border-bottom: none;
+  border-radius: 0;
+}

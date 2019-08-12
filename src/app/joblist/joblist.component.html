@@ -19,7 +19,7 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
 <ul>
   <li><a routerLink="/current" routerLinkActive="active"><i class="material-icons">place</i> Current Job</a></li>
   <li><i class="material-icons">list</i> Job List</li>
-  <li><i class="material-icons">chat_bubble</i> Messages</li>
+  <li><a routerLink="/messages" routerLinkActive="active"><i class="material-icons">chat_bubble</i> Messages</a></li>
   <li><i class="material-icons">router</i>Equipment Buffer</li>
   <li><i class="material-icons">settings_remote</i>Device Polling</li>
   <li><i class="material-icons">av_timer</i>Speed Test</li>
@@ -72,7 +72,7 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
         </div>
       </div>
       </div>
-      <div class="clockInMessage" *ngIf="clockedIn === 'false'">{{clockedIn}}Clock in to see your complete job list.</div>
+      <div class="clockInMessage" *ngIf="clockedIn === 'false'">Clock in to see your complete job list.</div>
       <div class="jobCard">
           <span class="time"><i class="fas fa-circle green"></i> 8:00 - 10:00 AM</span>
           <span class="jobDesc">Add New Services (Job #2899042)</span>

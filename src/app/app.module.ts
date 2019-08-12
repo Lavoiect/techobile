@@ -15,6 +15,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { JoblistComponent } from './joblist/joblist.component';
 import { CurrentjobComponent } from './currentjob/currentjob.component';
+import { MessagesComponent } from './messages/messages.component';
+import { FullfilmentMessageComponent } from './fullfilment-message/fullfilment-message.component';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { EmailTemplateComponent } from './email-template/email-template.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { CurrentjobComponent } from './currentjob/currentjob.component';
     LoginComponent,
     HomeComponent,
     JoblistComponent,
-    CurrentjobComponent
+    CurrentjobComponent,
+    MessagesComponent,
+    FullfilmentMessageComponent,
+    ComposeMessageComponent,
+    EmailTemplateComponent
   ],
   imports: [
     BrowserModule,
