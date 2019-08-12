@@ -1,3 +1,14 @@
+
+.mat-drawer-content{
+  overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+.mat-drawer-content::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}
+
 .row{
   padding: 0;
   margin: 0;
@@ -19,6 +30,9 @@
 .right{
   text-align: right;
 }
+.left{
+  padding-left: 0;
+}
 .map {
 
   width: 100%;
@@ -26,8 +40,25 @@
 .toolbar.btn{
   color: #fff;
 }
+mat-sidenav{
+
+  width: 275px;
+
+}
+
 mat-sidenav-container{
   height: 800px;
+
+
+
+  .spectrumLogo{
+    width: 100px;
+  }
+  .menuHeader{
+    color: #fff;
+    background: #056cc1;
+    height: 150px;
+  }
 }
 .joblistTitle{
   border-bottom: 1px solid grey;

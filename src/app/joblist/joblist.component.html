@@ -1,28 +1,57 @@
 <mat-sidenav-container
 class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
 <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
-Menu
+<div class="menuHeader">
+  <div class="row">
+    <div class="col-6"><img class="spectrumLogo" src="../../assets/Asset 2.png">
+    </div>
+    <div class="col-6">Clocked In</div>
+  </div>
+<div class="row">
+  <div class="col">
+      <p>Christopher Lavoie</p>
+      <p>Tech ID 7004</p>
+      <p>New England QAKA</p>
+  </div>
+</div>
+</div>
+
+<ul>
+  <li><a routerLink="/current" routerLinkActive="active"><i class="material-icons">place</i> Current Job</a></li>
+  <li><i class="material-icons">list</i> Job List</li>
+  <li><i class="material-icons">chat_bubble</i> Messages</li>
+  <li><i class="material-icons">router</i>Equipment Buffer</li>
+  <li><i class="material-icons">settings_remote</i>Device Polling</li>
+  <li><i class="material-icons">av_timer</i>Speed Test</li>
+  <li><i class="material-icons">search</i>Address Search</li>
+  <li><i class="material-icons">insert_invitation</i>Shift Schedule</li>
+  <li><i class="material-icons">bar_chart</i>End of Day Summary</li>
+  <li><i class="material-icons">assignment_turned_in</i>TechMobile Training</li>
+  <li><i class="material-icons">exit_to_app</i>Sign Out</li>
+</ul>
+
 </mat-sidenav>
 
 <mat-sidenav-content>
     <div class="toolbar">
         <div class="row">
-          <div class="col-6 left"><p><button class="btn" (click)="sidenav.open()"><i class="fas fa-bars"></i></button> TechMobile</p></div>
-          <div class="col-6 right">
-
-
+          <div class="col-5 left"><p><button class="btn" (click)="sidenav.open()"><i class="fas fa-bars"></i></button> TechMobile</p></div>
+          <div class="col-7 right">
             <div class="row">
-              <div class="col">
-                <div ngbDropdown class="d-inline-block">
-                  <button class="btn" id="dropdownBasic1" ngbDropdownToggle>{{ClockedStatus}}</button>
-                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button *ngIf="!ClockedIn" ngbDropdownItem (click)="changeStatus()">Clock In</button>
-                    <button *ngIf="ClockedIn" ngbDropdownItem (click)="changeStatus()">Clock Out</button>
-
+              <div class="col-10"><div class="row">
+                  <div class="col">
+                    <div ngbDropdown class="d-inline-block">
+                      <button class="btn" id="dropdownBasic1" ngbDropdownToggle>{{ clockedIn }}</button>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button *ngIf="clockedIn === 'false'" ngbDropdownItem (click)="changeStatus()">Clock In</button>
+                        <button *ngIf="clockedIn === 'true'" ngbDropdownItem (click)="changeStatus()">Clock Out</button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              </div>
+                  </div></div>
+              <div class="col-2"><i class="material-icons">chat_bubble</i></div>
+            </div>
+
 
 
           </div>
@@ -43,7 +72,7 @@ Menu
         </div>
       </div>
       </div>
-      <div class="clockInMessage" *ngIf="!ClockedIn">Clock in to see your complete job list.</div>
+      <div class="clockInMessage" *ngIf="clockedIn === 'false'">{{clockedIn}}Clock in to see your complete job list.</div>
       <div class="jobCard">
           <span class="time"><i class="fas fa-circle green"></i> 8:00 - 10:00 AM</span>
           <span class="jobDesc">Add New Services (Job #2899042)</span>
@@ -53,9 +82,9 @@ Menu
           <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
       </div>
 
-     <div class="afterIn" *ngIf="ClockedIn">
+     <div class="afterIn" *ngIf="clockedIn === 'true'">
       <div class="jobCard">
-        <span class="time"><i class="fas fa-circle green"></i> 8:00 - 10:00 AM</span>
+        <span class="time"><i class="fas fa-circle yellow"></i> 8:00 - 10:00 AM</span>
         <span class="jobDesc">Add New Services (Job #2899042)</span>
        <span class="name">Michael Haun</span>
         <span class="address">123 Main Ave. St. Louis, MO 43256</span>
@@ -63,7 +92,7 @@ Menu
         <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
     </div>
     <div class="jobCard">
-      <span class="time"><i class="fas fa-circle green"></i> 8:00 - 10:00 AM</span>
+      <span class="time"><i class="fas fa-circle grey"></i> 8:00 - 10:00 AM</span>
       <span class="jobDesc">Add New Services (Job #2899042)</span>
      <span class="name">Michael Haun</span>
       <span class="address">123 Main Ave. St. Louis, MO 43256</span>
@@ -71,7 +100,7 @@ Menu
       <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
   </div>
   <div class="jobCard">
-    <span class="time"><i class="fas fa-circle green"></i> 8:00 - 10:00 AM</span>
+    <span class="time"><i class="fas fa-circle grey"></i> 8:00 - 10:00 AM</span>
     <span class="jobDesc">Add New Services (Job #2899042)</span>
    <span class="name">Michael Haun</span>
     <span class="address">123 Main Ave. St. Louis, MO 43256</span>

@@ -14,13 +14,15 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { JoblistComponent } from './joblist/joblist.component';
+import { CurrentjobComponent } from './currentjob/currentjob.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    JoblistComponent
+    JoblistComponent,
+    CurrentjobComponent
   ],
   imports: [
     BrowserModule,
