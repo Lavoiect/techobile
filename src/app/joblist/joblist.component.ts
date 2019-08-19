@@ -10,6 +10,34 @@ import { Router } from '@angular/router';
 })
 export class JoblistComponent implements OnInit {
 
+  jobCard = [
+    {
+      jobStatus: 'active',
+      customer: 'Micheal Haun',
+      time: '8:00 - 10:00 Am',
+      serviceType: 'Add New Service',
+      jobNumber: 2899042,
+      Address: '123 Main Ave. St. Louis, MO, 43256'
+    },
+    {
+      jobStatus: 'next',
+      customer: 'John Smith',
+      time: '10:00 - 12:00 Am',
+      serviceType: 'Add New Service',
+      jobNumber: 2239023,
+      Address: '789 Main Ave. St. Louis, MO, 43256'
+    },
+    {
+      jobStatus: 'future',
+      customer: 'John Doe',
+      time: '1:00 - 2:00 Am',
+      serviceType: 'Re-arrange order',
+      jobNumber: 2239023,
+      Address: '789 Main Ave. St. Louis, MO, 43256'
+    },
+  ];
+
+  firstJob = this.jobCard.shift();
 
   @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
 

@@ -17,10 +17,10 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
 </div>
 
 <ul>
-  <li><a routerLink="/current" routerLinkActive="active"><i class="material-icons">place</i> Current Job</a></li>
+  <li><a routerLink="/current"><i class="material-icons">place</i> Current Job</a></li>
   <li><i class="material-icons">list</i> Job List</li>
-  <li><a routerLink="/messages" routerLinkActive="active"><i class="material-icons">chat_bubble</i> Messages</a></li>
-  <li><i class="material-icons">router</i>Equipment Buffer</li>
+  <li><a routerLink="/messages"><i class="material-icons">chat_bubble</i> Messages</a></li>
+  <li><a routerLink="/equipment"><i class="material-icons">router</i>Equipment Buffer</a></li>
   <li><i class="material-icons">settings_remote</i>Device Polling</li>
   <li><i class="material-icons">av_timer</i>Speed Test</li>
   <li><i class="material-icons">search</i>Address Search</li>
@@ -72,41 +72,26 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
         </div>
       </div>
       </div>
-      <div class="clockInMessage" *ngIf="clockedIn === 'false'">Clock in to see your complete job list.</div>
+      <div class="clockInMessage"  *ngIf="clockedIn === 'false'">Clock in to see your complete job list.</div>
+
       <div class="jobCard">
-          <span class="time"><i class="fas fa-circle green"></i> 8:00 - 10:00 AM</span>
-          <span class="jobDesc">Add New Services (Job #2899042)</span>
-         <span class="name">Michael Haun</span>
-          <span class="address">123 Main Ave. St. Louis, MO 43256</span>
+          <span class="time"><i class="fas fa-circle" [ngClass]="{'green':firstJob.jobStatus === 'active'}"></i> {{ firstJob.time }}</span>
+          <span class="jobDesc">{{ firstJob.serviceType }} (Job #{{ firstJob.jobNumber }})</span>
+         <span class="name">{{ firstJob.customer }}</span>
+          <span class="address">{{ firstJob.Address }}</span>
           <span class="setETA" > <button class="btn" disabled><i class="fas fa-stopwatch"></i> Set ETA</button></span>
           <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
       </div>
 
      <div class="afterIn" *ngIf="clockedIn === 'true'">
-      <div class="jobCard">
-        <span class="time"><i class="fas fa-circle yellow"></i> 8:00 - 10:00 AM</span>
-        <span class="jobDesc">Add New Services (Job #2899042)</span>
-       <span class="name">Michael Haun</span>
-        <span class="address">123 Main Ave. St. Louis, MO 43256</span>
+      <div class="jobCard" *ngFor="let job of jobCard">
+        <span class="time"><i class="fas fa-circle" [ngClass]="{'yellow':job.jobStatus === 'next', 'grey':job.jobStatus === 'future'}"></i> {{ job.time }}</span>
+        <span class="jobDesc">{{ job.serviceType }} (Job #{{ job.jobNumber }})</span>
+       <span class="name">{{ job.customer }}</span>
+        <span class="address">{{ job.Address }}</span>
         <span class="setETA" > <button class="btn" disabled><i class="fas fa-stopwatch"></i> Set ETA</button></span>
         <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
     </div>
-    <div class="jobCard">
-      <span class="time"><i class="fas fa-circle grey"></i> 8:00 - 10:00 AM</span>
-      <span class="jobDesc">Add New Services (Job #2899042)</span>
-     <span class="name">Michael Haun</span>
-      <span class="address">123 Main Ave. St. Louis, MO 43256</span>
-      <span class="setETA" > <button class="btn" disabled><i class="fas fa-stopwatch"></i> Set ETA</button></span>
-      <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
-  </div>
-  <div class="jobCard">
-    <span class="time"><i class="fas fa-circle grey"></i> 8:00 - 10:00 AM</span>
-    <span class="jobDesc">Add New Services (Job #2899042)</span>
-   <span class="name">Michael Haun</span>
-    <span class="address">123 Main Ave. St. Louis, MO 43256</span>
-    <span class="setETA" > <button class="btn" disabled><i class="fas fa-stopwatch"></i> Set ETA</button></span>
-    <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
-</div>
      </div>
 
 

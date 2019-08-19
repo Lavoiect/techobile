@@ -1,0 +1,38 @@
+<div class="background">
+    <div class="toolBar">
+        <div class="row">
+          <div class="col-10"><button class="btn" (click)="backClicked()"><i class="material-icons">keyboard_backspace</i></button>Equipment Buffer List </div>
+          <div class="col-2"><button class="btn"><i class="material-icons">search</i></button></div>
+        </div>
+        <div class="row">
+          <div class="col-3" (click)="showEquipment('all')">All</div>
+          <div class="col-3" (click)="showEquipment('voice')">Voice</div>
+          <div class="col-3" (click)="showEquipment('HSD')">HSD</div>
+          <div class="col-3" (click)="showEquipment('video')">Video</div>
+        </div>
+    </div>
+
+
+    <div *ngIf="showAll">
+        {{device.length}}
+      <div class="listPanel" *ngFor="let d of device">
+        {{d.type}}<br>
+        {{d.model}}
+    </div>
+
+    </div>
+
+<div *ngIf="showFiltered">
+    <div *ngIf="device | deviceType:filterargs as filteredItems">
+        {{filteredItems.length}}
+      <div class="listPanel" *ngFor="let device of filteredItems ">
+
+        {{device.type}}<br>
+        {{device.model}}
+    </div>
+
+    </div>
+</div>
+
+
+</div>

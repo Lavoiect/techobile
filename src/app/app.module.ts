@@ -19,6 +19,11 @@ import { MessagesComponent } from './messages/messages.component';
 import { FullfilmentMessageComponent } from './fullfilment-message/fullfilment-message.component';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { EmailTemplateComponent } from './email-template/email-template.component';
+import { EquipmentBufferComponent } from './equipment-buffer/equipment-buffer.component';
+import { EquipmentListComponent } from './equipment-list/equipment-list.component';
+import { DeviceTypePipe } from './device-type.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import { EmailTemplateComponent } from './email-template/email-template.componen
     MessagesComponent,
     FullfilmentMessageComponent,
     ComposeMessageComponent,
-    EmailTemplateComponent
+    EmailTemplateComponent,
+    EquipmentBufferComponent,
+    EquipmentListComponent,
+    DeviceTypePipe,
+
+
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { FullfilmentMessageComponent } from './fullfilment-message/fullfilment-message.component';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { EmailTemplateComponent } from './email-template/email-template.component';
+import { EquipmentBufferComponent } from './equipment-buffer/equipment-buffer.component';
+import { EquipmentListComponent } from './equipment-list/equipment-list.component';
+
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -17,6 +20,8 @@ const routes: Routes = [
   {path: 'fulfillementMessage', component: FullfilmentMessageComponent},
   {path: 'compose', component: ComposeMessageComponent},
   {path: 'readEmail', component: EmailTemplateComponent},
+  {path: 'equipment', component: EquipmentBufferComponent},
+  {path: 'equipmentList', component: EquipmentListComponent},
   {path: 'home', component: HomeComponent,
     children: [
       { path: 'joblist', component: JoblistComponent}
