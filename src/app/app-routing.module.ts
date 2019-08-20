@@ -10,6 +10,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 import { EmailTemplateComponent } from './email-template/email-template.component';
 import { EquipmentBufferComponent } from './equipment-buffer/equipment-buffer.component';
 import { EquipmentListComponent } from './equipment-list/equipment-list.component';
+import { DeviceDetailsComponent } from './device-details/device-details.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'readEmail', component: EmailTemplateComponent},
   {path: 'equipment', component: EquipmentBufferComponent},
   {path: 'equipmentList', component: EquipmentListComponent},
+  {path: 'deviceDetails/:id', component: DeviceDetailsComponent},
   {path: 'home', component: HomeComponent,
     children: [
       { path: 'joblist', component: JoblistComponent}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import { Device } from '../device';
+import { GetDataService } from '../get-data.service';
 
 @Component({
   selector: 'app-equipment-list',
@@ -13,43 +14,17 @@ result: any;
 showVoice: boolean;
 filterargs = {type: 'voice'};
 showFiltered = false;
+devices:  Device[] = [];
 
-  device: Device[] = [
-    {
-      type: 'voice',
-      model: 'Motorola',
-      deviceId: 'AT4506JK232S',
-    },
-    {
-      type: 'voice',
-      model: 'Motorola',
-      deviceId: 'AT4506JK232S',
-    },
-    {
-      type: 'HSD',
-      model: 'Motorola',
-      deviceId: 'AT4506JK232S',
-    },
-    {
-      type: 'video',
-      model: 'Motorola',
-      deviceId: 'AT4506JK232S',
-    },
-    {
-      type: 'voice',
-      model: 'Motorola',
-      deviceId: 'AT4506JK232S',
-    },
-  ];
-
-  showList = false;
+showList = false;
 
 
-  constructor(private _location: Location) { }
+  constructor(private _location: Location, private apiService: GetDataService) { }
 
   showAll: boolean;
 
   ngOnInit() {
+    this.fetchDevices();
     this.showAll = true;
   }
   backClicked() {
@@ -67,6 +42,18 @@ showFiltered = false;
       this.showAll = false;
       this.showFiltered = true;
       console.log('show filtered');
+    }
+  }
+
+  fetchDevices() {
+    this.apiService.getDevices().subscribe((devices: Device[]) => {
+      this.devices = devices;
+    });
+  }
+
+  addTypeClass(){
+    if(this.devices){
+
     }
   }
 

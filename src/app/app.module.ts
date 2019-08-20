@@ -22,6 +22,8 @@ import { EmailTemplateComponent } from './email-template/email-template.componen
 import { EquipmentBufferComponent } from './equipment-buffer/equipment-buffer.component';
 import { EquipmentListComponent } from './equipment-list/equipment-list.component';
 import { DeviceTypePipe } from './device-type.pipe';
+import { DeviceDetailsComponent } from './device-details/device-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -39,6 +41,7 @@ import { DeviceTypePipe } from './device-type.pipe';
     EquipmentBufferComponent,
     EquipmentListComponent,
     DeviceTypePipe,
+    DeviceDetailsComponent,
 
 
   ],
@@ -51,7 +54,8 @@ import { DeviceTypePipe } from './device-type.pipe';
     MatSidenavModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
 
   ],
   providers: [],

@@ -1,3 +1,43 @@
 .listPanel{
-  border: 1px solid red;
+  background: #fff;
+  border-bottom: 1px grey solid;
+
+
 }
+ul {
+  list-style-type: none;
+  padding: 0;
+  li{
+    padding: 10px;
+  }
+}
+li:first-child{
+  border-top: 1px grey solid;
+}
+
+.arrayLength{
+  padding: 20px;
+  background: #fff;
+  color: grey;
+  margin-bottom: 20px;
+}
+.listPanel:first-of-type {
+  border-top: 1px grey solid;
+}
+
+img{
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.badge{
+  border: 1px grey solid;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.badgeType{
+  border: 2px black solid;
+}
+
+
