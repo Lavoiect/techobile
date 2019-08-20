@@ -58,41 +58,44 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
         </div>
 
       </div>
+<div class="content">
 
-     <img class="map" src="../../assets/map.png">
-      <div class=joblistTitle>
-        <div class="row">
-            <div class="col-4">First Job</div>
-            <div class="col-8">
-              <div class="jobKey">
-                <i class="fas fa-circle green"></i> Current
-                <i class="fas fa-circle yellow"></i> Next
-                <i class="fas fa-circle grey"></i> Future
-            </div>
-        </div>
+    <img class="map" src="../../assets/map.png">
+    <div class=joblistTitle>
+      <div class="row">
+          <div class="col-4">First Job</div>
+          <div class="col-8">
+            <div class="jobKey">
+              <i class="fas fa-circle green"></i> Current
+              <i class="fas fa-circle yellow"></i> Next
+              <i class="fas fa-circle grey"></i> Future
+          </div>
       </div>
-      </div>
-      <div class="clockInMessage"  *ngIf="clockedIn === 'false'">Clock in to see your complete job list.</div>
+    </div>
+    </div>
+    <div class="clockInMessage"  *ngIf="clockedIn === 'false'">Clock in to see your complete job list.</div>
 
-      <div class="jobCard">
-          <span class="time"><i class="fas fa-circle" [ngClass]="{'green':firstJob.jobStatus === 'active'}"></i> {{ firstJob.time }}</span>
-          <span class="jobDesc">{{ firstJob.serviceType }} (Job #{{ firstJob.jobNumber }})</span>
-         <span class="name">{{ firstJob.customer }}</span>
-          <span class="address">{{ firstJob.Address }}</span>
-          <span class="setETA" > <button class="btn" disabled><i class="fas fa-stopwatch"></i> Set ETA</button></span>
-          <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
-      </div>
-
-     <div class="afterIn" *ngIf="clockedIn === 'true'">
-      <div class="jobCard" *ngFor="let job of jobCard">
-        <span class="time"><i class="fas fa-circle" [ngClass]="{'yellow':job.jobStatus === 'next', 'grey':job.jobStatus === 'future'}"></i> {{ job.time }}</span>
-        <span class="jobDesc">{{ job.serviceType }} (Job #{{ job.jobNumber }})</span>
-       <span class="name">{{ job.customer }}</span>
-        <span class="address">{{ job.Address }}</span>
+    <div class="jobCard">
+        <span class="time"><i class="fas fa-circle" [ngClass]="{'green':firstJob.jobStatus === 'active'}"></i> {{ firstJob.time }}</span>
+        <span class="jobDesc">{{ firstJob.serviceType }} (Job #{{ firstJob.jobNumber }})</span>
+       <span class="name">{{ firstJob.customer }}</span>
+        <span class="address">{{ firstJob.Address }}</span>
         <span class="setETA" > <button class="btn" disabled><i class="fas fa-stopwatch"></i> Set ETA</button></span>
         <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
     </div>
-     </div>
+
+   <div class="afterIn" *ngIf="clockedIn === 'true'">
+    <div class="jobCard" *ngFor="let job of jobCard">
+      <span class="time"><i class="fas fa-circle" [ngClass]="{'yellow':job.jobStatus === 'next', 'grey':job.jobStatus === 'future'}"></i> {{ job.time }}</span>
+      <span class="jobDesc">{{ job.serviceType }} (Job #{{ job.jobNumber }})</span>
+     <span class="name">{{ job.customer }}</span>
+      <span class="address">{{ job.Address }}</span>
+      <span class="setETA" > <button class="btn" disabled><i class="fas fa-stopwatch"></i> Set ETA</button></span>
+      <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
+  </div>
+   </div>
+</div>
+
 
 
 

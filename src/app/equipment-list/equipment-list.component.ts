@@ -21,11 +21,17 @@ showList = false;
 
   constructor(private _location: Location, private apiService: GetDataService) { }
 
+  badgeType: boolean;
+  voiceProperty = false;
+
   showAll: boolean;
+
+
 
   ngOnInit() {
     this.fetchDevices();
     this.showAll = true;
+
   }
   backClicked() {
    // @todo us router to go to equipment route
@@ -48,14 +54,13 @@ showList = false;
   fetchDevices() {
     this.apiService.getDevices().subscribe((devices: Device[]) => {
       this.devices = devices;
+      console.log(this.devices);
     });
   }
 
-  addTypeClass() {
-    if (this.devices) {
-
-    }
   }
 
-}
+
+
+
 

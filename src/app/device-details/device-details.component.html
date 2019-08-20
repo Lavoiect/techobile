@@ -1,15 +1,74 @@
 <div class="background">
     <div class="toolBar">
         <div class="row">
-          <div class="col-10"><button class="btn" (click)="backClicked()"><i class="material-icons">keyboard_backspace</i></button>Equipment Buffer List </div>
+          <div class="col-10"><button class="btn" (click)="backClicked()"><i class="material-icons">keyboard_backspace</i></button>{{device.model}} </div>
           <div class="col-2"><button class="btn"><i class="material-icons">search</i></button></div>
         </div>
     </div>
+<div class="content">
+    <div class="image">
+        <img src="../../assets/Screen Shot 2019-08-20 at 9.11.18 AM.png">
+      </div>
 
-    <p>device-details works!</p>
-    {{ device.model }} <br>
-    {{device.id}}<br>
-    {{device.type}}
+      <table class="table table-bordered">
+          <tbody>
+            <tr>
+
+              <td>Manufacturer</td>
+              <td>Motorola</td>
+
+            </tr>
+            <tr>
+              <td>Model</td>
+              <td>{{device.model}}</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>S2</td>
+              </tr>
+              <tr>
+                  <td>Subtype</td>
+                  <td>data</td>
+                </tr>
+                <tr>
+                    <td>Services</td>
+                    <td>
+                      <span [ngClass]="{'badgeType':(device.type.indexOf('voice') !== -1)}" class="badge">Voice</span>
+                      <span [ngClass]="{'badgeType':(device.type.indexOf('HSD') !== -1)}" class="badge">HSD</span>
+                      <span [ngClass]="{'badgeType':(device.type.indexOf('video') !== -1)}" class="badge">Video</span></td>
+                  </tr>
+                  <tr>
+                    <td>Device ID</td>
+                    <td>H1314120090123443</td>
+                  </tr>
+                  <tr>
+                      <td>Last Change Date</td>
+                      <td>9/7/2016</td>
+                  </tr>
+                  <tr>
+                      <td>Status</td>
+                      <td>S Stock-Shelved</td>
+                  </tr>
+                  <tr>
+                      <td>Device Address</td>
+                      <td>1.1.0.1</td>
+                  </tr>
+                  <tr>
+                      <td>Component</td>
+                      <td>data</td>
+                  </tr>
+                  <tr>
+                      <td>Rtn Path</td>
+                      <td>data</td>
+                  </tr>
+          </tbody>
+        </table>
+
+      {{ device.model }} <br>
+      {{device.id}}<br>
+      {{device.type}}
+
+</div>
 
 
 

@@ -2,31 +2,31 @@
   "device": [
     {
       "id": 1,
-      "type": [1],
+      "type": ["voice"] ,
       "model":"Arris TG862",
       "deviceId": "0015964EA2F0"
     },
     {
       "id": 2,
-      "type": [1, 2],
+      "type": ["video"],
       "model": "Motorola AX43256",
       "deviceId": "003432565434"
     },
     {
       "id": 3,
-      "type": "HSD",
+      "type": ["HSD","video"],
       "model": "Motorola",
       "deviceId": "AT4506JK232S"
     },
     {
       "id": 4,
-      "type": "video",
+      "type": ["video"],
       "model": "Motorola",
       "deviceId": "AT4506JK232S"
     },
     {
       "id": 5,
-      "type": "voice",
+      "type": ["HSD","video","voice"],
       "model": "Motorola",
       "deviceId": "AT4506JK232S"
     }

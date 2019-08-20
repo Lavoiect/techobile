@@ -12,50 +12,63 @@
         </div>
     </div>
 
+    <div class="content">
+        <div *ngIf="showAll">
+            <div class="arrayLength">
+               All ({{devices.length}} Devices)
+            </div>
+      <ul>
+       <li class="listPanel" *ngFor="let d of devices">
+         <a routerLink="/deviceDetails/{{d.id}}">
+          <div class="row">
+              <div class="col-4">
+                <img src="../../assets/Screen Shot 2019-08-20 at 9.11.18 AM.png">
+              </div>
+              <div class="col-8">{{d.model}}<br>{{d.deviceId}}<br>
 
-<div *ngIf="showAll">
-      <div class="arrayLength">
-         All ({{devices.length}} Devices)
+                <span [ngClass]="{'badgeType':(d.type.indexOf('voice') !== -1)}" class="badge">Voice</span>
+                <span [ngClass]="{'badgeType':(d.type.indexOf('HSD') !== -1)}" class="badge">HSD</span>
+                <span [ngClass]="{'badgeType':(d.type.indexOf('video') !== -1)}" class="badge">Video</span>
+              </div>
+
+            </div>
+         </a>
+        </li>
+
+      </ul>
       </div>
-<ul>
- <li class="listPanel" *ngFor="let d of devices">
-   <a routerLink="/deviceDetails/{{d.id}}">
-    <div class="row">
-        <div class="col-4">
-          <img src="../../assets/Screen Shot 2019-08-20 at 9.11.18 AM.png">
-        </div>
-        <div class="col-8">{{d.model}}<br>{{d.deviceId}}<br>{{d.type}}
-          <span [ngClass]="{'badgeType':(d.type.indexOf(0) > -1)}" class="badge">Voice</span>
-          <span [ngClass]="{'badgeType':(d.type.indexOf(1) > -1)}" class="badge">HSD</span>
-          <span [ngClass]="{'badgeType':(d.type.indexOf(2) > -1)}" class="badge">Video</span>
-        </div>
+      <div *ngIf="showFiltered">
+          <ul *ngIf="devices | deviceType:filterargs as filteredItems">
+              <div class="arrayLength">
+                  All ({{filteredItems.length}} Devices)
+               </div>
 
+            <li class="listPanel" *ngFor="let device of filteredItems">
+                <a routerLink="/deviceDetails/{{device.id}}">
+              <div class="row">
+                <div class="col-4">
+                    <img src="../../assets/Screen Shot 2019-08-20 at 9.11.18 AM.png">
+                </div>
+                <div class="col-8">
+                    {{device.model}}<br>{{device.deviceId}}<br>
+                    <span [ngClass]="{'badgeType':(device.type.indexOf('voice') !== -1)}" class="badge">Voice</span>
+                    <span [ngClass]="{'badgeType':(device.type.indexOf('HSD') !== -1)}" class="badge">HSD</span>
+                    <span [ngClass]="{'badgeType':(device.type.indexOf('video') !== -1)}" class="badge">Video</span>
+                </div>
+              </div>
+
+             </a>
+            </li>
+
+        </ul>
       </div>
-   </a>
-  </li>
-
-</ul>
 
 
-</div>
 
 
-<div *ngIf="showFiltered">
-    <ul *ngIf="devices | deviceType:filterargs as filteredItems">
-        <div class="arrayLength">
-            All ({{filteredItems.length}} Devices)
-         </div>
-
-      <li class="listPanel" *ngFor="let device of filteredItems">
-
-       <a routerLink="/deviceDetails/{{device.id}}">{{device.type}}</a> <br>
-        {{device.model}}
-      </li>
-
-  </ul>
-</div>
 
 
+    </div>
 
 
 
