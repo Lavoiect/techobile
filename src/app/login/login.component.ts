@@ -3,7 +3,6 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,12 +18,9 @@ export class LoginComponent implements OnInit {
   constructor( private router: Router) { }
 
   ngOnInit() {
-
   }
 onSubmit() {
-
-
-  if (this.username.value === 'p2753973') {
+  if (this.username.value === 'chrisdummyhead') {
     if (this.password.value === 'test') {
       this.router.navigate(['/home/joblist']);
     }
