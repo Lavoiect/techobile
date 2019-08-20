@@ -1,0 +1,64 @@
+<div class="background">
+    <div class="toolBar">
+        <div class="row">
+          <div class="col-10"><button class="btn" (click)="backClicked()"><i class="material-icons">keyboard_backspace</i></button>Equipment Buffer List </div>
+          <div class="col-2"><button class="btn"><i class="material-icons">search</i></button></div>
+        </div>
+        <div class="row">
+          <div class="col-3" (click)="showEquipment('all')">All</div>
+          <div class="col-3" (click)="showEquipment('voice')">Voice</div>
+          <div class="col-3" (click)="showEquipment('HSD')">HSD</div>
+          <div class="col-3" (click)="showEquipment('video')">Video</div>
+        </div>
+    </div>
+
+
+<div *ngIf="showAll">
+      <div class="arrayLength">
+         All ({{devices.length}} Devices)
+      </div>
+<ul>
+ <li class="listPanel" *ngFor="let d of devices">
+   <a routerLink="/deviceDetails/{{d.id}}">
+    <div class="row">
+        <div class="col-4">
+          <img src="../../assets/Screen Shot 2019-08-20 at 9.11.18 AM.png">
+        </div>
+        <div class="col-8">{{d.model}}<br>{{d.deviceId}}<br>{{d.type}}
+          <span [ngClass]="{'badgeType':d.type == 'voice'}" class="badge">Voice</span>
+          <span [ngClass]="{'badgeType':d.type == 'HSD'}" class="badge"class="badge">HSD</span>
+          <span [ngClass]="{'badgeType':d.type == 'video'}" class="badge"class="badge">Video</span>
+        </div>
+
+      </div>
+   </a>
+  </li>
+
+</ul>
+
+
+</div>
+
+
+<div *ngIf="showFiltered">
+    <ul *ngIf="devices | deviceType:filterargs as filteredItems">
+        <div class="arrayLength">
+            All ({{filteredItems.length}} Devices)
+         </div>
+
+      <li class="listPanel" *ngFor="let device of filteredItems">
+
+       <a routerLink="/deviceDetails/{{device.id}}">{{device.type}}</a> <br>
+        {{device.model}}
+      </li>
+
+  </ul>
+</div>
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,23 @@
+
+.subject{
+  padding: 15px;
+  border-bottom: 1px solid grey;
+}
+.message{
+  padding: 15px;
+  .messageHeader {
+    margin-bottom: 10px;
+
+    span{
+      position: absolute;
+      margin: 13px 10px;
+    }
+  }
+  i {
+    color: #fff;
+    background: #0b354d;
+    padding: 10px;
+    border-radius: 50%;
+  }
+}
+

@@ -14,13 +14,36 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { JoblistComponent } from './joblist/joblist.component';
+import { CurrentjobComponent } from './currentjob/currentjob.component';
+import { MessagesComponent } from './messages/messages.component';
+import { FullfilmentMessageComponent } from './fullfilment-message/fullfilment-message.component';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { EmailTemplateComponent } from './email-template/email-template.component';
+import { EquipmentBufferComponent } from './equipment-buffer/equipment-buffer.component';
+import { EquipmentListComponent } from './equipment-list/equipment-list.component';
+import { DeviceTypePipe } from './device-type.pipe';
+import { DeviceDetailsComponent } from './device-details/device-details.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    JoblistComponent
+    JoblistComponent,
+    CurrentjobComponent,
+    MessagesComponent,
+    FullfilmentMessageComponent,
+    ComposeMessageComponent,
+    EmailTemplateComponent,
+    EquipmentBufferComponent,
+    EquipmentListComponent,
+    DeviceTypePipe,
+    DeviceDetailsComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -31,7 +54,8 @@ import { JoblistComponent } from './joblist/joblist.component';
     MatSidenavModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
 
   ],
   providers: [],
