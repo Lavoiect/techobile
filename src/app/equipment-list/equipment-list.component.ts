@@ -51,8 +51,8 @@ showList = false;
     });
   }
 
-  addTypeClass(){
-    if(this.devices){
+  addTypeClass() {
+    if (this.devices) {
 
     }
   }

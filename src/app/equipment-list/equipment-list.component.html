@@ -25,9 +25,9 @@
           <img src="../../assets/Screen Shot 2019-08-20 at 9.11.18 AM.png">
         </div>
         <div class="col-8">{{d.model}}<br>{{d.deviceId}}<br>{{d.type}}
-          <span [ngClass]="{'badgeType':d.type == 'voice'}" class="badge">Voice</span>
-          <span [ngClass]="{'badgeType':d.type == 'HSD'}" class="badge"class="badge">HSD</span>
-          <span [ngClass]="{'badgeType':d.type == 'video'}" class="badge"class="badge">Video</span>
+          <span [ngClass]="{'badgeType':(d.type.indexOf(0) > -1)}" class="badge">Voice</span>
+          <span [ngClass]="{'badgeType':(d.type.indexOf(1) > -1)}" class="badge">HSD</span>
+          <span [ngClass]="{'badgeType':(d.type.indexOf(2) > -1)}" class="badge">Video</span>
         </div>
 
       </div>

@@ -2,13 +2,13 @@
   "device": [
     {
       "id": 1,
-      "type": "HSD",
+      "type": [1],
       "model":"Arris TG862",
       "deviceId": "0015964EA2F0"
     },
     {
       "id": 2,
-      "type": ["voice", "HSD"],
+      "type": [1, 2],
       "model": "Motorola AX43256",
       "deviceId": "003432565434"
     },
