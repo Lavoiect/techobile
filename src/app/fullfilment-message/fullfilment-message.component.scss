@@ -51,10 +51,8 @@ ul{
   height: 300px;
 
   button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 10px;
+    position: fixed;
+    margin-left: -65px;
   }
 
   i {

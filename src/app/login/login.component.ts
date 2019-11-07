@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 onSubmit() {
-  if (this.username.value === 'chrisdummyhead') {
+  if (this.username.value === 'p2753973') {
     if (this.password.value === 'test') {
       this.router.navigate(['/home/joblist']);
     }
