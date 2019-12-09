@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
-import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -41,9 +40,11 @@ export class JoblistComponent implements OnInit {
 
   @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
 
-  ClockedStatus: string;
-  status = new FormControl('');
-  clockedIn = 'false';
+
+  clockedIn = 'Clocked Out';
+  status: string;
+  showfirstJobDetails = false;
+  showDetailsButton = true;
 
   constructor(private router: Router) { }
 
@@ -51,7 +52,7 @@ export class JoblistComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem(this.clockedIn) == null) {
-      this.clockedIn = 'false';
+      this.clockedIn = 'Clocked Out';
     } else {
       this.clockedIn = localStorage.getItem(this.clockedIn);
     }
@@ -61,15 +62,21 @@ export class JoblistComponent implements OnInit {
     this.sidenav.close();
   }
   changeStatus() {
-    if (this.clockedIn === 'false') {
+    if (this.clockedIn === 'Clocked Out') {
       console.log('logged in');
-      localStorage.setItem(this.clockedIn, 'true');
+      localStorage.setItem(this.clockedIn, 'Clocked In');
       this.clockedIn = localStorage.getItem(this.clockedIn);
+
     } else {
       localStorage.clear();
       location.reload();
     }
 
+  }
+
+  showDetails() {
+    this.showfirstJobDetails = true;
+    this.showDetailsButton = false;
   }
 
 }

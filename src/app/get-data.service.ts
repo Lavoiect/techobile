@@ -12,9 +12,9 @@ export class GetDataService {
 
 
   getDevices(): Observable<Device[]> {
-    return this.httpClient.get<Device[]>('http://localhost:3004/device');
+    return this.httpClient.get<Device[]>('http://localhost:3000/device');
   }
   getDevice(deviceId): Observable<Device[]> {
-    return this.httpClient.get<Device[]>('http://localhost:3004/device/' + deviceId);
+    return this.httpClient.get<Device[]>('http://localhost:3000/device/' + deviceId);
   }
 }

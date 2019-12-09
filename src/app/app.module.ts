@@ -24,6 +24,9 @@ import { EquipmentListComponent } from './equipment-list/equipment-list.componen
 import { DeviceTypePipe } from './device-type.pipe';
 import { DeviceDetailsComponent } from './device-details/device-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EtaComponent } from './eta/eta.component';
+import { PollingComponent } from './polling/polling.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
 
 
 
@@ -42,6 +45,9 @@ import { HttpClientModule } from '@angular/common/http';
     EquipmentListComponent,
     DeviceTypePipe,
     DeviceDetailsComponent,
+    EtaComponent,
+    PollingComponent,
+    TopNavComponent,
 
 
   ],

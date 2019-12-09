@@ -11,6 +11,8 @@ import { EmailTemplateComponent } from './email-template/email-template.componen
 import { EquipmentBufferComponent } from './equipment-buffer/equipment-buffer.component';
 import { EquipmentListComponent } from './equipment-list/equipment-list.component';
 import { DeviceDetailsComponent } from './device-details/device-details.component';
+import { EtaComponent } from './eta/eta.component';
+import { PollingComponent } from './polling/polling.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path: 'current', component: CurrentjobComponent},
   {path: 'messages', component: MessagesComponent},
   {path: 'messages', component: MessagesComponent},
+  {path: 'polling', component: PollingComponent},
+  {path: 'eta', component: EtaComponent},
   {path: 'fulfillementMessage', component: FullfilmentMessageComponent},
   {path: 'compose', component: ComposeMessageComponent},
   {path: 'readEmail', component: EmailTemplateComponent},
