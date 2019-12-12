@@ -1,0 +1,49 @@
+.subNav{
+  position: fixed;
+  top: 50px;
+  width: 370px;
+  margin-top: -10px;
+  background: #0b354d;
+  color: #fff;
+}
+
+
+ul{
+  list-style-type: none;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.topSection{
+  padding-top: 35px;
+}
+
+.map {
+  width: 100%;
+}
+
+p {
+margin-bottom: 0px;
+}
+.detailsBar{
+  background: #0b354d;
+  color: #fff;
+  font-size: 12px;
+}
+.navIcon {
+  margin-top: -10px;
+  background: #0099d8;
+    padding:10px;
+    border-radius: 50%;
+    font-size: 25px;
+}
+.jobDetailCard{
+  margin-top: 20px;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
-import { Device } from '../device';
-import { GetDataService } from '../get-data.service';
+import { Device } from '../../device';
+import { GetDataService } from '../../get-data.service';
 
 @Component({
   selector: 'app-equipment-list',

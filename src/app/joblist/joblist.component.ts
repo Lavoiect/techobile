@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatSidenav} from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import {MatDialog, MatSidenav} from '@angular/material';
+import { AlertComponent } from '../alert/alert.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 @Component({
   selector: 'app-joblist',
@@ -8,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./joblist.component.scss']
 })
 export class JoblistComponent implements OnInit {
+
 
   jobCard = [
     {
@@ -46,9 +49,10 @@ export class JoblistComponent implements OnInit {
   showfirstJobDetails = false;
   showDetailsButton = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public dialog: MatDialog) { }
 
   shouldRun = (h => h.test(window.location.host));
+  loggedIn = false;
 
   ngOnInit() {
     if (localStorage.getItem(this.clockedIn) == null) {
@@ -58,6 +62,25 @@ export class JoblistComponent implements OnInit {
     }
     console.log(this.clockedIn);
   }
+  checkStatus() {
+    if (this.clockedIn === 'Clocked Out') {
+      this.openDialog();
+      console.log('Please Log in');
+    } else {
+      this.sidenav.open();
+    }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AlertComponent, {panelClass: 'myapp-no-padding-dialog'});
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'true') {
+        this.changeStatus();
+      }
+    });
+  }
+
   public close(reason: string) {
     this.sidenav.close();
   }
@@ -79,4 +102,16 @@ export class JoblistComponent implements OnInit {
     this.showDetailsButton = false;
   }
 
+  jobCardDetails() {
+    if (this.clockedIn === 'Clocked In') {
+      this.router.navigate([`/jobDetails`]);
+    }
+  }
+
+  navigateTo( ) {
+    this.router.navigate([`/eta`]);
+  }
+  navigateBack( ) {
+    this.router.navigate([`/home/joblist`]);
+  }
 }

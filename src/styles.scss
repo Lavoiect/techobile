@@ -35,3 +35,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 .content{
   margin-top: 50px;
 }
+
+.myapp-no-padding-dialog .mat-dialog-container {
+  padding: 0 24px 0 0;
+  width: 320px;
+  height: 200px;
+
+  .mat-dialog-content {
+    padding: 40px 0 30px 35px;
+  }
+
+}
+
+
+
+
+.ng-tns-c3-0 {
+  display: block !important;
+}
+
+
+// timepicker
+.timepicker-backdrop-overlay{
+  background-color: rgba(0,0,0,0) !important;
+  display: block !important;
+}
+.timepicker{
+  display: block !important;
+  box-shadow: none !important;
+}
+
+.timepicker__header {
+  background-color: #f5f5f7 !important;
+}
+
+.timepicker__body{
+  background-color: #f5f5f7 !important;
+}
+.timepicker__actions{
+  background-color: #f5f5f7 !important;
+}
+
+
+

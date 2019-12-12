@@ -1,0 +1,45 @@
+.container{
+  width: 100%;
+}
+.subNav{
+  position: fixed;
+  top: 50px;
+  width: 370px;
+  margin-top: -10px;
+  background: #0b354d;
+  color: #fff;
+}
+.topSection{
+  padding-top: 100px;
+}
+
+ul{
+  list-style-type: none;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.mat-form-field{
+  width: 100%;
+}
+button{
+  width: 320px;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 30px auto 30px;
+  display: block;
+}
+
+.active{
+  border-bottom: 3px solid #0099d8;
+}
+.recentDevice{
+  margin-top: 100px;
+}

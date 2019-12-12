@@ -1,0 +1,38 @@
+<app-top-nav name="Job #{{jobNumber}}"></app-top-nav>
+<div class="background">
+<div class="content">
+    <div class="subNav">
+        <ul>
+          <li><a (click)="showDetails()" [ngClass]="{'active': toggleTools}">Job Details</a> </li>
+          <li><a (click)="showEquipment()" [ngClass]="{'active': toggleDevice}">Equipment Summary</a> </li>
+        </ul>
+
+        </div>
+        <div *ngIf="jobDetails" class="jobDetails">
+            <div class="topSection">
+                <img class="map" src="../../assets/map.png">
+            </div>
+            <div class="detailsBar">
+
+              <div class="row">
+                <div class="col-2"><img class="house" src="../../assets/house.png"></div>
+                <div class="col-7"><p>123 Main Ave.</p>
+                                    <p>St. Louis, MO 43256</p>
+                                    <p>Est. Travel Time: 1 minutes</p>
+                </div>
+                <div class="col-3"><div class="nav">
+                    <i class="fas fa-car navIcon"></i>
+                </div></div>
+              </div>
+            </div>
+            <mat-card class="jobDetailCard">
+              <button>GO ON JOB</button>
+              <p>8:00 - 10:00 AM</p>
+              <p>New Install</p>
+              <p><i class="fas fa-stopwatch"></i> 1 minutes</p>
+              <p>Job Number</p>
+
+            </mat-card>
+        </div>
+</div>
+</div>

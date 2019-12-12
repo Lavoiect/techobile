@@ -84,8 +84,7 @@ mat-sidenav-container{
   }
   .setETA{
     float: left;
-
-
+    margin-left: 50px;
   }
   .navigate{
     float: left;
@@ -102,4 +101,15 @@ mat-sidenav-container{
 }
 .dropdown-item:hover{
   background: none;
+}
+
+.acknowledge {
+  width: 300px;
+  border-radius: 30px;
+  background-color: #056cc1;
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
 }

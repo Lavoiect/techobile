@@ -8,11 +8,14 @@ import { MessagesComponent } from './messages/messages.component';
 import { FullfilmentMessageComponent } from './fullfilment-message/fullfilment-message.component';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { EmailTemplateComponent } from './email-template/email-template.component';
-import { EquipmentBufferComponent } from './equipment-buffer/equipment-buffer.component';
-import { EquipmentListComponent } from './equipment-list/equipment-list.component';
+import { EquipmentBufferComponent } from './Equipment/equipment-buffer/equipment-buffer.component';
+import { EquipmentListComponent } from './Equipment/equipment-list/equipment-list.component';
 import { DeviceDetailsComponent } from './device-details/device-details.component';
 import { EtaComponent } from './eta/eta.component';
 import { PollingComponent } from './polling/polling.component';
+import { ScanComponent } from './Equipment/scan/scan.component';
+import { SpeedComponent } from './speed/speed.component';
+import { JobDetailsComponent } from './job-details/job-details.component';
 
 
 const routes: Routes = [
@@ -21,18 +24,21 @@ const routes: Routes = [
   {path: 'messages', component: MessagesComponent},
   {path: 'messages', component: MessagesComponent},
   {path: 'polling', component: PollingComponent},
+  {path: 'speed', component: SpeedComponent},
   {path: 'eta', component: EtaComponent},
   {path: 'fulfillementMessage', component: FullfilmentMessageComponent},
   {path: 'compose', component: ComposeMessageComponent},
   {path: 'readEmail', component: EmailTemplateComponent},
   {path: 'equipment', component: EquipmentBufferComponent},
   {path: 'equipmentList', component: EquipmentListComponent},
+  {path: 'scan', component: ScanComponent},
   {path: 'deviceDetails/:id', component: DeviceDetailsComponent},
   {path: 'home', component: HomeComponent,
     children: [
-      { path: 'joblist', component: JoblistComponent}
+      { path: 'joblist', component: JoblistComponent},
     ]
 },
+  { path: 'jobDetails', component: JobDetailsComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 

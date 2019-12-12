@@ -22,12 +22,12 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
   <li><a routerLink="/messages"><i class="material-icons">chat_bubble</i> Messages</a></li>
   <li><a routerLink="/equipment"><i class="material-icons">router</i>Equipment Buffer</a></li>
   <li><a routerLink="/polling"><i class="material-icons">settings_remote</i>Device Polling</a></li>
-  <li><i class="material-icons">av_timer</i>Speed Test</li>
+  <li><a routerLink="/speed"><i class="material-icons">av_timer</i>Speed Test</a></li>
   <li><i class="material-icons">search</i>Address Search</li>
   <li><i class="material-icons">insert_invitation</i>Shift Schedule</li>
   <li><i class="material-icons">bar_chart</i>End of Day Summary</li>
   <li><i class="material-icons">assignment_turned_in</i>TechMobile Training</li>
-  <li><i class="material-icons">exit_to_app</i>Sign Out</li>
+  <li><a routerLink="/login"><i class="material-icons">exit_to_app</i>Sign Out</a></li>
 </ul>
 
 </mat-sidenav>
@@ -35,7 +35,7 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
 <mat-sidenav-content>
     <div class="toolBar">
         <div class="row">
-          <div class="col-5 left"><p><button class="btn" (click)="sidenav.open()"><i class="fas fa-bars"></i></button> TechMobile</p></div>
+          <div class="col-5 left"><p><button class="btn" (click)="checkStatus()"><i class="fas fa-bars"></i></button> TechMobile</p></div>
           <div class="col-7 right">
             <div class="row">
               <div class="col-10"><div class="row">
@@ -60,6 +60,16 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
       </div>
 <div class="content">
 
+  <div *ngIf="loggedIn" class="popUp">
+    <div class="popToolbar">
+      <p>Tech Status Alert</p>
+      <p>You must clock in to continue</p>
+      <button class="btn btn-primary">CANCEL</button>
+      <button>CLOCK IN</button>
+    </div>
+  </div>
+
+
     <img class="map" src="../../assets/map.png">
     <div class=joblistTitle>
       <div class="row">
@@ -73,30 +83,59 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
       </div>
     </div>
     </div>
-    <div class="clockInMessage"  *ngIf="clockedIn === 'false'">Clock in to see your complete job list.</div>
-
+    <div class="clockInMessage"  *ngIf="clockedIn === 'Clocked Out'">Clock in to see your complete job list.</div>
+    <a (click)="jobCardDetails()">
     <div class="jobCard">
         <span class="time"><i class="fas fa-circle" [ngClass]="{'green':firstJob.jobStatus === 'active'}"></i> {{ firstJob.time }}</span>
         <span class="jobDesc">{{ firstJob.serviceType }} (Job #{{ firstJob.jobNumber }})</span>
        <span class="name">{{ firstJob.customer }}</span>
         <span class="address">{{ firstJob.Address }}</span>
-        <button (click)="showDetails()" *ngIf="showDetailsButton && clockedIn === 'Clocked Out'">Acknowledge Job</button>
+        <button class="acknowledge" mat-flat-button color="primary" (click)="showDetails()" *ngIf="showDetailsButton && clockedIn === 'Clocked Out'">Acknowledge Job</button>
         <div class="firstJobDetails" *ngIf= "showfirstJobDetails || clockedIn === 'Clocked In'">
-          <span class="setETA" > <button class="btn" disabled><i class="fas fa-stopwatch"></i> Set ETA</button></span>
+            <button mat-icon-button class="setETA" disabled>
+              <i class="fas fa-stopwatch"></i> Set ETA
+              </button>
           <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
         </div>
 
     </div>
+    </a>
 
    <div class="afterIn" *ngIf="clockedIn === 'Clocked In'">
-    <div class="jobCard" *ngFor="let job of jobCard">
+
+    <div class="jobCard" *ngFor="let job of jobCard" (click)="jobCardDetails()">
       <span class="time"><i class="fas fa-circle" [ngClass]="{'yellow':job.jobStatus === 'next', 'grey':job.jobStatus === 'future'}"></i> {{ job.time }}</span>
       <span class="jobDesc">{{ job.serviceType }} (Job #{{ job.jobNumber }})</span>
      <span class="name">{{ job.customer }}</span>
       <span class="address">{{ job.Address }}</span>
-      <a class="setETA btn" [routerLink]="['/eta']" ><i class="fas fa-stopwatch"></i> Set ETA</a>
+
+
+      <button mat-icon-button class="setETA" [routerLink]="['/eta']" [ngxTimepicker]="picker"><i class="fas fa-stopwatch"> </i>Set ETA</button>
+      <div class="custom-buttons-example">
+          <ngx-material-timepicker #picker [cancelBtnTmpl]="cancelBtn"
+                                           [confirmBtnTmpl]="confirmBtn"
+                                           [preventOverlayClick]=true
+                                           [disableAnimation]=true
+                                           ></ngx-material-timepicker>
+
+          <ng-template #cancelBtn>
+              <button (click)="navigateBack()" style="margin-right: 10px;">Cancel</button>
+          </ng-template>
+
+          <ng-template #confirmBtn>
+              <button (click)="navigateBack()">Set ETA</button>
+          </ng-template>
+       </div>
+
+       <ng-template #cancelBtn2>
+          <button style="margin-right: 10px;">Cancel</button>
+      </ng-template>
+      <button mat-icon-button class="setETA" [routerLink]="['/eta']">
+
+        </button>
       <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
   </div>
+
    </div>
 </div>
 

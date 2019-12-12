@@ -1,1 +1,35 @@
 <app-top-nav name="Device Polling"></app-top-nav>
+
+<div class="content">
+    <div class="subNav">
+      <ul>
+        <li><a (click)="showPolling()" [ngClass]="{'active': toggleTools}">Polling Tools</a> </li>
+        <li><a (click)="showRecent()" [ngClass]="{'active': toggleDevice}">Recent Devices</a> </li>
+      </ul>
+
+      </div>
+
+
+
+      <div *ngIf="pollingTools" class="pollingTools">
+          <div class="topSection">
+              <div class="container">
+                  <mat-form-field>
+                    <input matInput placeholder="Device ID">
+                  </mat-form-field>
+                </div>
+            <button mat-flat-button color="primary">POLL DEVICE</button>
+
+          </div>
+          <div class="bottomSection">
+            <img src="../../assets/scan.png" alt="">
+          </div>
+      </div>
+
+      <div *ngIf="recentDevices"  class="recentDevice">
+          <p>No Recent Devices</p>
+        </div>
+
+
+
+</div>
