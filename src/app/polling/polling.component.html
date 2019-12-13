@@ -18,7 +18,7 @@
                     <input matInput placeholder="Device ID">
                   </mat-form-field>
                 </div>
-            <button mat-flat-button color="primary">POLL DEVICE</button>
+            <button (click)="pollingResults()" mat-flat-button color="primary">POLL DEVICE</button>
 
           </div>
           <div class="bottomSection">
@@ -27,7 +27,7 @@
       </div>
 
       <div *ngIf="recentDevices"  class="recentDevice">
-          <p>No Recent Devices</p>
+          <p>You have not recent Devices.<br> Use the Polling Tools to locate a device.</p>
         </div>
 
 

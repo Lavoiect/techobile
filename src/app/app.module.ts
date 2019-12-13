@@ -38,6 +38,7 @@ import { ScanComponent } from './Equipment/scan/scan.component';
 import { AlertComponent } from './alert/alert.component';
 import { SpeedComponent } from './speed/speed.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
+import { PollResultsComponent } from './polling/poll-results/poll-results.component';
 
 
 
@@ -63,6 +64,7 @@ import { JobDetailsComponent } from './job-details/job-details.component';
     AlertComponent,
     SpeedComponent,
     JobDetailsComponent,
+    PollResultsComponent,
 
 
   ],

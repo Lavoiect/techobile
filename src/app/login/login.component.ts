@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 onSubmit() {
   if (this.username.value === 'p2753973') {
-    if (this.password.value === 'test') {
+    if (this.password.value === 'password') {
       this.router.navigate(['/home/joblist']);
     }
   } else {

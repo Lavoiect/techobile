@@ -16,6 +16,7 @@ import { PollingComponent } from './polling/polling.component';
 import { ScanComponent } from './Equipment/scan/scan.component';
 import { SpeedComponent } from './speed/speed.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
+import { PollResultsComponent } from './polling/poll-results/poll-results.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'messages', component: MessagesComponent},
   {path: 'messages', component: MessagesComponent},
   {path: 'polling', component: PollingComponent},
+  {path: 'pollingResults', component: PollResultsComponent},
   {path: 'speed', component: SpeedComponent},
   {path: 'eta', component: EtaComponent},
   {path: 'fulfillementMessage', component: FullfilmentMessageComponent},

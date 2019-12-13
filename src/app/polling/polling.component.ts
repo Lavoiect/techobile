@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-polling',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PollingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   pollingTools = true;
   recentDevices = false;
@@ -31,6 +32,10 @@ export class PollingComponent implements OnInit {
       this.toggleTools = false;
       this.toggleDevice = true;
     }
+  }
+
+  pollingResults() {
+    this.router.navigate(['/pollingResults']);
   }
 
 }

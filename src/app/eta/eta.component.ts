@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Directive, OnInit, AfterViewInit, ElementRef, ViewChild  } from '@angular/core';
 import {Location} from '@angular/common';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
 
 
 
@@ -10,13 +10,25 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
   styleUrls: ['./eta.component.scss'],
 
 })
-export class EtaComponent implements OnInit {
+export class EtaComponent implements OnInit, AfterViewInit {
+  @ViewChild('picker', {static: true}) picker: ElementRef;
 
 
-  constructor(private _location: Location, private atp: NgxMaterialTimepickerModule) { }
+  constructor(private _location: Location) { }
+
+
 
   ngOnInit() {
-    const [ngxTimepicker] = 'picker';
+    setTimeout(() => {
+      this.picker.nativeElement.click();
+    });
+
+  }
+
+  ngAfterViewInit() {
+    console.log('Values on ngAfterViewInit():');
+    console.log('picker', this.picker.nativeElement);
+
   }
 
   backClicked() {

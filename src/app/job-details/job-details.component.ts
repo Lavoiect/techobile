@@ -10,6 +10,7 @@ export class JobDetailsComponent implements OnInit {
   equipSummary = false;
   toggleDetails = true;
   toggleEquipment: boolean;
+  onJob = false;
 
   jobNumber = 1127345;
 
@@ -30,9 +31,13 @@ export class JobDetailsComponent implements OnInit {
     if (this.equipSummary === false) {
       this.equipSummary = true;
       this.jobDetails = false;
-      this.toggleEquipment = false;
-      this.toggleDetails = true;
+      this.toggleEquipment = true;
+      this.toggleDetails = false;
     }
+  }
+
+  goOnJob() {
+    this.onJob = !this.onJob;
   }
 
 }

@@ -3,8 +3,8 @@
 <div class="content">
     <div class="subNav">
         <ul>
-          <li><a (click)="showDetails()" [ngClass]="{'active': toggleTools}">Job Details</a> </li>
-          <li><a (click)="showEquipment()" [ngClass]="{'active': toggleDevice}">Equipment Summary</a> </li>
+          <li><a (click)="showDetails()" [ngClass]="{'active': toggleDetails}">Job Details</a> </li>
+          <li><a (click)="showEquipment()" [ngClass]="{'active': toggleEquipment}">Equipment Summary</a> </li>
         </ul>
 
         </div>
@@ -25,14 +25,129 @@
                 </div></div>
               </div>
             </div>
-            <mat-card class="jobDetailCard">
-              <button>GO ON JOB</button>
+            <div class="jobDetailCard mygrid">
+              <button *ngIf="!onJob" (click)=goOnJob()>GO ON JOB</button>
+              <button *ngIf="onJob" disabled>Complete Job</button>
+
               <p>8:00 - 10:00 AM</p>
               <p>New Install</p>
               <p><i class="fas fa-stopwatch"></i> 1 minutes</p>
-              <p>Job Number</p>
 
-            </mat-card>
+              <table>
+                  <tr>
+                     <td>Job Number</td>
+                     <td>1127345</td>
+                  </tr>
+
+                  <tr>
+                     <td>Created on</td>
+                     <td>1/11/17 8:03 AM</td>
+                  </tr>
+
+                  <tr>
+                     <td>Work Order</td>
+                     <td>645632454657</td>
+                  </tr>
+
+                  <tr>
+                    <td>Order Source</td>
+                    <td>ICOMS</td>
+                  </tr>
+                  <tr>
+                      <td>Fulfillment Center</td>
+                      <td>South Carolina</td>
+                    </tr>
+                    <tr>
+                        <td>Customer Name</td>
+                        <td>Michael Haun</td>
+                      </tr>
+                      <tr>
+                          <td>Account Number</td>
+                          <td>7483901892</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>123 Street Ave.<br>St. Louis, MO 34234</td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number</td>
+                            <td>(987)234-1254</td>
+                        </tr>
+               </table>
+               <p>Description</p>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus eaque voluptas animi voluptate tempore, saepe minima.</p>
+
+               <table>
+                 <tr>
+                   <td>Current Services</td>
+                   <td>Voice HSD Video</td>
+                 </tr>
+
+                 <tr>
+                    <td>Spectrum HSD</td>
+
+                  </tr>
+
+                  <tr>
+                      <td>Spectrum Video</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>TC Indicator</td>
+                        <td>Data Here</td>
+                      </tr>
+
+                      <tr>
+                          <td>Work Units</td>
+                          <td>Data Here</td>
+                        </tr>
+
+                        <tr>
+                            <td>Dispatch Status</td>
+                            <td>Data Here</td>
+                          </tr>
+
+                          <tr>
+                              <td>Drop Tags</td>
+                              <td><i class="material-icons">
+                                  edit
+                                  </i> 453452343</td>
+                            </tr>
+               </table>
+              </div>
+
+              <mat-card>
+                  <h6>Requested Services</h6>
+                  <hr>
+
+                  <p>Add Spectrum WiFi Device</p>
+                  <hr>
+                  <p><img class="activationButton" src="../../assets/activation.png"> Activation</p>
+              </mat-card>
+
+
+              <div class="mycard">
+                <h6>Account History</h6>
+                <hr>
+                <table>
+                    <tr>
+                      <td>Install HSD</td>
+                      <td>1/15/17</td>
+                    </tr>
+                    <tr>
+                       <td>Adresss Change</td>
+                       <td>8/10/14</td>
+                     </tr>
+                     <tr>
+                         <td>Trouble Call</td>
+                         <td>4/13/14</td>
+                       </tr>
+                  </table>
+
+
+                <p>SEE ALL</p>
+              </div>
         </div>
 </div>
 </div>

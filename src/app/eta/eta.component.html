@@ -1,8 +1,24 @@
 <div class="background">
-  <app-top-nav name="Set ETA"></app-top-nav>
+<app-top-nav name="Set ETA"></app-top-nav>
+  <button #picker id="timerButton" [ngxTimepicker]="picker">click</button>
+
+
   <div class="content">
 
 
+      <ngx-material-timepicker #picker [cancelBtnTmpl]="cancelBtn"
+      [confirmBtnTmpl]="confirmBtn"
+      [preventOverlayClick]=true
+      [disableAnimation]=true
+      ></ngx-material-timepicker>
+
+<ng-template #cancelBtn>
+<button #closePicker (click)="backClicked()"  style="margin-right: 10px;">Cancel</button>
+</ng-template>
+
+<ng-template #confirmBtn>
+<button (click)="backClicked()">Set ETA</button>
+</ng-template>
 
 
   </div>

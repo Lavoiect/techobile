@@ -110,29 +110,7 @@ class="example-container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
       <span class="address">{{ job.Address }}</span>
 
 
-      <button mat-icon-button class="setETA" [routerLink]="['/eta']" [ngxTimepicker]="picker"><i class="fas fa-stopwatch"> </i>Set ETA</button>
-      <div class="custom-buttons-example">
-          <ngx-material-timepicker #picker [cancelBtnTmpl]="cancelBtn"
-                                           [confirmBtnTmpl]="confirmBtn"
-                                           [preventOverlayClick]=true
-                                           [disableAnimation]=true
-                                           ></ngx-material-timepicker>
-
-          <ng-template #cancelBtn>
-              <button (click)="navigateBack()" style="margin-right: 10px;">Cancel</button>
-          </ng-template>
-
-          <ng-template #confirmBtn>
-              <button (click)="navigateBack()">Set ETA</button>
-          </ng-template>
-       </div>
-
-       <ng-template #cancelBtn2>
-          <button style="margin-right: 10px;">Cancel</button>
-      </ng-template>
-      <button mat-icon-button class="setETA" [routerLink]="['/eta']">
-
-        </button>
+      <button mat-icon-button class="setETA" [routerLink]="['/eta']" ><i class="fas fa-stopwatch"> </i>Set ETA</button>
       <span class="navigate"> <button class="btn"><i class="fas fa-car"></i> Navigate</button></span>
   </div>
 
