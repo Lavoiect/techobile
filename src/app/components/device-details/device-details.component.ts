@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GetDataService } from '../get-data.service';
+import { GetDataService } from '../../get-data.service';
 import {Location} from '@angular/common';
-import { Device } from '../device';
+import { Device } from '../../device';
 
 
 @Component({

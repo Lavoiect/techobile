@@ -16,29 +16,29 @@ import { AmazingTimePickerModule } from 'amazing-time-picker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { JoblistComponent } from './joblist/joblist.component';
-import { CurrentjobComponent } from './currentjob/currentjob.component';
-import { MessagesComponent } from './messages/messages.component';
-import { FullfilmentMessageComponent } from './fullfilment-message/fullfilment-message.component';
-import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { EmailTemplateComponent } from './email-template/email-template.component';
-import { EquipmentBufferComponent } from './Equipment/equipment-buffer/equipment-buffer.component';
-import { EquipmentListComponent } from './Equipment/equipment-list/equipment-list.component';
+import { JoblistComponent } from './components/joblist/joblist.component';
+import { CurrentjobComponent } from './components/currentjob/currentjob.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { FullfilmentMessageComponent } from './components/fullfilment-message/fullfilment-message.component';
+import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
+import { EmailTemplateComponent } from './components/email-template/email-template.component';
+import { EquipmentBufferComponent } from './components/Equipment/equipment-buffer/equipment-buffer.component';
+import { EquipmentListComponent } from './components/Equipment/equipment-list/equipment-list.component';
 import { DeviceTypePipe } from './device-type.pipe';
-import { DeviceDetailsComponent } from './device-details/device-details.component';
+import { DeviceDetailsComponent } from './components/device-details/device-details.component';
 import { HttpClientModule } from '@angular/common/http';
-import { EtaComponent } from './eta/eta.component';
-import { PollingComponent } from './polling/polling.component';
-import { TopNavComponent } from './top-nav/top-nav.component';
-import { ScanComponent } from './Equipment/scan/scan.component';
-import { AlertComponent } from './alert/alert.component';
-import { SpeedComponent } from './speed/speed.component';
-import { JobDetailsComponent } from './job-details/job-details.component';
-import { PollResultsComponent } from './polling/poll-results/poll-results.component';
+import { EtaComponent } from './components/eta/eta.component';
+import { PollingComponent } from './components/polling/polling.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { ScanComponent } from './components/Equipment/scan/scan.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { SpeedComponent } from './components/speed/speed.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { PollResultsComponent } from './components/polling/poll-results/poll-results.component';
 
 
 

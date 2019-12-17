@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { JoblistComponent } from './joblist/joblist.component';
-import { CurrentjobComponent } from './currentjob/currentjob.component';
-import { MessagesComponent } from './messages/messages.component';
-import { FullfilmentMessageComponent } from './fullfilment-message/fullfilment-message.component';
-import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { EmailTemplateComponent } from './email-template/email-template.component';
-import { EquipmentBufferComponent } from './Equipment/equipment-buffer/equipment-buffer.component';
-import { EquipmentListComponent } from './Equipment/equipment-list/equipment-list.component';
-import { DeviceDetailsComponent } from './device-details/device-details.component';
-import { EtaComponent } from './eta/eta.component';
-import { PollingComponent } from './polling/polling.component';
-import { ScanComponent } from './Equipment/scan/scan.component';
-import { SpeedComponent } from './speed/speed.component';
-import { JobDetailsComponent } from './job-details/job-details.component';
-import { PollResultsComponent } from './polling/poll-results/poll-results.component';
+import { JoblistComponent } from './components/joblist/joblist.component';
+import { CurrentjobComponent } from './components/currentjob/currentjob.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { FullfilmentMessageComponent } from './components/fullfilment-message/fullfilment-message.component';
+import { ComposeMessageComponent } from './components/compose-message/compose-message.component';
+import { EmailTemplateComponent } from './components/email-template/email-template.component';
+import { EquipmentBufferComponent } from './components/Equipment/equipment-buffer/equipment-buffer.component';
+import { EquipmentListComponent } from './components/Equipment/equipment-list/equipment-list.component';
+import { DeviceDetailsComponent } from './components/device-details/device-details.component';
+import { EtaComponent } from './components/eta/eta.component';
+import { PollingComponent } from './components/polling/polling.component';
+import { ScanComponent } from './components/Equipment/scan/scan.component';
+import { SpeedComponent } from './components/speed/speed.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { PollResultsComponent } from './components/polling/poll-results/poll-results.component';
 
 
 const routes: Routes = [
