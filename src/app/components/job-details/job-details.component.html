@@ -26,8 +26,8 @@
               </div>
             </div>
             <div class="jobDetailCard mygrid">
-              <button *ngIf="!onJob" (click)=goOnJob()>GO ON JOB</button>
-              <button *ngIf="onJob" disabled>Complete Job</button>
+              <button class="goOnJobButton" *ngIf="!onJob" (click)=goOnJob()>GO ON JOB</button>
+              <button class="goOnJobButton disabled" *ngIf="onJob" disabled>Complete Job</button>
 
               <p>8:00 - 10:00 AM</p>
               <p>New Install</p>
